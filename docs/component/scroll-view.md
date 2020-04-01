@@ -137,13 +137,14 @@ export default {
             onRefresh() {
                 if (this._freshing) return;
                 this._freshing = true;
+                this.triggered = true
                 setTimeout(() => {
                     this.triggered = false;
                     this._freshing = false;
                 }, 3000)
             },
             onRestore() {
-                this.triggered = 'restore'; // 需要重置
+                this.triggered = false; // 需要重置
                 console.log("onRestore");
             },
             onAbort() {
